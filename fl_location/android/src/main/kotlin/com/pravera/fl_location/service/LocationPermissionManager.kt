@@ -112,7 +112,7 @@ class LocationPermissionManager: PluginRegistry.RequestPermissionsResultListener
 
 	@SuppressLint("InlinedApi")
 	override fun onRequestPermissionsResult(requestCode: Int,
-			permissions: Array<out String>?, grantResults: IntArray?): Boolean {
+			permissions: Array<out String>, grantResults: IntArray): Boolean {
 		if (permissions == null || grantResults == null || grantResults.isEmpty()) {
 			callback?.onError(ErrorCodes.LOCATION_PERMISSION_REQUEST_CANCELLED)
 			disposeResources()
